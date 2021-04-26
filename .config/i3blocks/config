@@ -1,0 +1,61 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=true
+separator_block_width=15
+
+# Guess the weather hourly
+[weather]
+command=curl -Ss 'https://wttr.in/Munich?0&T&Q' | cut -c 16- | head -2 | xargs echo
+interval=3600
+
+[network]
+command=/home/bogi/.bogdan/scripts/i3blocks/iface.sh
+interval=10
+
+[bandwidth]
+command=/home/bogi/.bogdan/scripts/i3blocks/bandwidth2
+interval=persist
+markup=pango
+LABEL=🠕🠗
+
+## Update screen brightness every 5 minutes
+#[backlight]
+#command=/home/bogi/.bogdan/scripts/i3blocks/backlight.sh
+#interval=300
+
+[cpu_usage2]
+command=/home/bogi/.bogdan/scripts/i3blocks/cpu_usage2
+markup=pango
+interval=persist
+#min_width=CPU 100.00%
+#REFRESH_TIME=1
+LABEL=CPU
+#WARN_PERCENT=50
+#CRIT_PERCENT=80
+#DECIMALS=2
+
+[memory]
+command=/home/bogi/.bogdan/scripts/i3blocks/memory.sh
+label=MEM 
+interval=5
+
+[volume-pulaudio]
+command=/home/bogi/.bogdan/scripts/i3blocks/volume-pulseaudio.sh
+interval=once
+signal=1
+
+[battery2]
+command=/home/bogi/.bogdan/scripts/i3blocks/battery2
+markup=pango
+interval=30
+
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=5
