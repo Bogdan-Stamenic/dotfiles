@@ -23,7 +23,9 @@ interval=10
 command=/home/bogi/.bogdan/scripts/i3blocks/bandwidth2
 interval=persist
 markup=pango
-LABEL=🠕🠗
+LABEL= 
+#INLABEL=DOWN
+#OUTLABEL=UP
 
 ## Update screen brightness every 5 minutes
 #[backlight]
