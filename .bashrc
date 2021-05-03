@@ -34,12 +34,7 @@ alias gs='git status'
 alias ..='cd ..'
 alias fstab="sudo vim /etc/fstab"
 alias ssh='kitty +kitten ssh'
-#alias fseissh="ssh -XCi ~/.ssh/id_rsa -J bogi@login.fs.ei.tum.de bogi@tinkywinky"
-#alias fseiftp="sftp -i ~/.ssh/id_rsa bogi@login.fs.ei.tum.de"
-alias hermes-ssh="ssh -i ~/.ssh/id_rsa bogi@hermes"
-alias vmssh="ssh bogi@localhost -p 10022"
-alias vmftp="sftp -P 10022 bogi@localhost"
-#fix obvious typo's
+#fix obvious typos
 alias cd..='cd ..'
 alias pdw="pwd"
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'

@@ -10,6 +10,7 @@
 export TERMINAL=/usr/bin/kitty
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
+export GIT_EDITOR=vim
 export VIM_SNIPPETS_DIR=/home/bogi/.vim/bundle/vim-snippets/UltiSnips
 export MAKEFLAGS="-j$(nproc)"
 
