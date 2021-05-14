@@ -204,7 +204,7 @@ bindsym $mod+x [urgent=latest] focus
 assign [class="TelegramDesktop"] 2:MissionControl
 assign [class="Thunderbird"] 2:MissionControl
 assign [class="discord"] 2:MissionControl
-assign [class="Signal"] 2:MissionControl
+#assign [class="Signal"] 2:MissionControl
 for_window [class="Emacs"] floating enable, move container to scratchpad
 for_window [instance="Msgcompose" class="Thunderbird"] floating enable
 for_window [instance="Calendar" class="Thunderbird"] floating enable
