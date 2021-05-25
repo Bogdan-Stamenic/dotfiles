@@ -29,14 +29,14 @@ alias ll="ls --color=auto -laF"
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
-#alias rm='rm -i'
 alias gs='git status'
 alias ..='cd ..'
 alias fstab="sudo vim /etc/fstab"
+#ssh for 'kitty' terminal emulator
 alias ssh='kitty +kitten ssh'
 #fix obvious typos
 alias cd..='cd ..'
-alias pdw="pwd"
+alias pdw='pwd'
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 #check vulnerabilities microcode
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
