@@ -21,11 +21,11 @@ man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     command man "$@"
 }
-#ignore upper and lowercase when TAB completion
-bind "set completion-ignore-case on"
+##ignore upper and lowercase when TAB completion
+#bind "set completion-ignore-case on"
 
 ## User custom commands
-alias ll="ls --color=auto -laF"
+alias ll="ls --color=auto -hlaF"
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
