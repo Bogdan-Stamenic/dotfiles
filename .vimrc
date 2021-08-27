@@ -1,5 +1,5 @@
 "https://github.com/elfalko/regolith-auto-setup/blob/master
-inoremap jj <esc>
+"inoremap jj <esc>
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
