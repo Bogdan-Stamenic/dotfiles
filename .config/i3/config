@@ -1,25 +1,15 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
-#
-
-# i3 config file (v4)
-#
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
-
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
+# (This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).)
 font pango:DejaVu Sans 8
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# they are included here as an example. Modify as you see fit
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
@@ -53,24 +43,12 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 ## change focus
-#bindsym $mod+h focus left
-#bindsym $mod+j focus down
-#bindsym $mod+k focus up
-#bindsym $mod+l focus right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -100,14 +78,14 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+#bindsym $mod+d focus child -> CONFLICTS WITH LAUNCHER BINDING!!!
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:Browser"
 set $ws2 "2:MissionControl"
 set $ws3 "3:Work"
-set $ws4 "4"
+set $ws4 "4:Work"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -133,7 +111,7 @@ bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsymt$mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
@@ -191,9 +169,7 @@ popup_during_fullscreen smart
 #############################
 ## User custom assignments ##
 #############################
-#
-# All custom scripts are located in /home/bogi/.config/i3/i3-scripts/
-set $scripts /home/bogi/.bogdan/scripts/i3
+
 # Autotile windows
 exec_always --no-startup-id autotiling
 
@@ -201,25 +177,23 @@ exec_always --no-startup-id autotiling
 bindsym $mod+x [urgent=latest] focus
 
 # Custom Window Positioning/Gaps Rules; xprop -> WM_CLASS(STRING) = "<instance>" "<class>"
-assign [class="TelegramDesktop"] 2:MissionControl
-assign [class="Thunderbird"] 2:MissionControl
-assign [class="discord"] 2:MissionControl
-#assign [class="Signal"] 2:MissionControl
-for_window [class="Emacs"] floating enable, move container to scratchpad
+assign [class="TelegramDesktop"] $ws2
+assign [class="Thunderbird"] $ws2
+assign [class="discord"] $ws2
+assign [class="Signal"] $ws2
+#for_window [class="Emacs"] floating enable, move container to scratchpad
 for_window [instance="Msgcompose" class="Thunderbird"] floating enable
 for_window [instance="Calendar" class="Thunderbird"] floating enable
+
 # Disable window titlebars, to let i3-gaps work
 for_window [class=".*"] border pixel 0
 gaps inner 8
 
 # Setup background
 exec feh --randomize --bg-scale /home/bogi/Pictures/wallpapers/*
-#exec nitrogen --restore & 
-#exec syndaemon -i 0.8 -d -t -K -R
 
 # Launch the following on start:
 exec firefox
-exec $scripts/launch_daily_journal.sh
 exec --no-startup-id discord
 exec --no-startup-id telegram-desktop
 exec --no-startup-id thunderbird
@@ -228,10 +202,7 @@ exec --no-startup-id flameshot
 
 ## User custom keybinding
 # https://github.com/meskarune/i3lock-fancy /or/ https://aur.archlinux.org/i3lock-fancy-git.git
-bindsym Mod4+l exec i3lock-fancy
-bindsym Mod4+f exec firefox
-bindsym Mod4+j exec $scripts/launch_daily_journal.sh
-bindsym Mod4+t exec thunar
-bindsym Mod4+e exec emacsclient -nc
-#bindsym Print exec gm import -window root screenshot.png 
+bindsym $mod+l exec i3lock-fancy
+#bindsym $mod+j exec $scripts/launch_daily_journal.sh
+bindsym $mod+t exec thunar
 #bindsym Print exec gm import -window root screenshot.png 
