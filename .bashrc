@@ -32,8 +32,8 @@ alias fgrep='fgrep --color=auto'
 alias gs='git status'
 alias ..='cd ..'
 alias fstab="sudo vim /etc/fstab"
-#ssh for 'kitty' terminal emulator
-alias ssh='kitty +kitten ssh'
+##ssh for 'kitty' terminal emulator
+#alias ssh='kitty +kitten ssh'
 #fix obvious typos
 alias cd..='cd ..'
 alias pdw='pwd'
@@ -41,6 +41,7 @@ alias sl='ls'
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 #check vulnerabilities microcode
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
+alias vi='nvim'
 
 ## For managing dotfiles.
 ## https://www.youtube.com/watch?v=tBoLDpTWVOM
@@ -58,4 +59,3 @@ alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 ## config commit -m "A short message"
 ## config push
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
-#alias emacs="emacs -nw"

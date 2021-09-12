@@ -8,9 +8,9 @@
 [ ! -s ~/.config/mpd/pid ] && mpd
 
 export TERMINAL=/usr/bin/kitty
-export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/vim
-export GIT_EDITOR=vim
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
+export GIT_EDITOR=nvim
 export VIM_SNIPPETS_DIR=/home/bogi/.vim/bundle/vim-snippets/UltiSnips
 export MAKEFLAGS="-j$(nproc)"
 
