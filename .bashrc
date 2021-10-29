@@ -42,6 +42,7 @@ alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 #check vulnerabilities microcode
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 alias vi='nvim'
+alias attach='tmux attach-session -t'
 
 ## For managing dotfiles.
 ## https://www.youtube.com/watch?v=tBoLDpTWVOM
