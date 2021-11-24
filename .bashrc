@@ -43,6 +43,7 @@ alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 alias vi='nvim'
 alias attach='tmux attach-session -t'
+alias jankify='~/.bogdan/scripts/python/jankify.py' #Dumb python script
 
 ## For managing dotfiles.
 ## https://www.youtube.com/watch?v=tBoLDpTWVOM
