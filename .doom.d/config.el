@@ -48,7 +48,8 @@
 (setq display-line-numbers-type t)
 (setq projectile-project-search-path '("~/Documents/"))
 
-
+;; Enable snippets
+(yas-global-mode 1)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;

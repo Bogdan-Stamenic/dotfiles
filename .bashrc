@@ -44,6 +44,7 @@ alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 alias vi='nvim'
 alias attach='tmux attach-session -t'
 alias jankify='~/.bogdan/scripts/python/jankify.py' #Dumb python script
+alias keycast='screenkey --timeout 1.5 --font-size small --position center --bg-color blue --opacity 0.5'
 
 ## For managing dotfiles.
 ## https://www.youtube.com/watch?v=tBoLDpTWVOM
