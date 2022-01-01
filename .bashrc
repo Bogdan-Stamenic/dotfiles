@@ -4,7 +4,7 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-export PATH="$PATH:~/.emacs.d/bin"
+export PATH="$PATH:~/.emacs.d/bin:~/.bogdan/scripts/python"
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
