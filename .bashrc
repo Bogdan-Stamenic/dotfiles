@@ -31,6 +31,7 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias gs='git status'
 alias ..='cd ..'
+alias ...='cd ../..'
 alias fstab="sudo vim /etc/fstab"
 ##ssh for 'kitty' terminal emulator
 #alias ssh='kitty +kitten ssh'
