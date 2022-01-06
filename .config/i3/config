@@ -212,9 +212,12 @@ exec --no-startup-id thunderbird
 exec emacs
 exec --no-startup-id flameshot
 
-## User custom keybinding
-# https://github.com/meskarune/i3lock-fancy /or/ https://aur.archlinux.org/i3lock-fancy-git.git
+### User custom keybinding
+## https://github.com/meskarune/i3lock-fancy /or/ https://aur.archlinux.org/i3lock-fancy-git.git
 bindsym Control+Mod1+l exec i3lock-fancy #CTRL+ALT+L
-#bindsym $mod+j exec $scripts/launch_daily_journal.sh
-bindsym $mod+t exec thunar
+## Launch windows using functions keys
+bindsym $mod+F1 exec firefox
+bindsym $mod+F2 exec brave
+bindsym $mod+F3 exec thunar
+bindsym $mod+F4 exec keepassxc
 #bindsym Print exec gm import -window root screenshot.png 
