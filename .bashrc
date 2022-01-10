@@ -21,7 +21,7 @@ man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     command man "$@"
 }
-##ignore upper and lowercase when TAB completion
+##ignore upper and lowercase when TAB completing
 #bind "set completion-ignore-case on"
 
 ## User custom commands
@@ -35,7 +35,7 @@ alias ...='cd ../..'
 alias fstab="sudo vim /etc/fstab"
 ##ssh for 'kitty' terminal emulator
 #alias ssh='kitty +kitten ssh'
-#fix obvious typos
+##fix obvious typos
 alias cd..='cd ..'
 alias pdw='pwd'
 alias sl='ls'
@@ -53,7 +53,7 @@ alias keycast='screenkey --timeout 1.5 --font-size small --position center --bg-
 ##
 ## Configure with the following:
 ## git init --bare $HOME/dotfiles
-## alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' (add this alias to .bashrc)
+## alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' #(add this alias to .bashrc)
 ## [user@linux]$ source .bashrc
 ## [user@linux]$ config config --local status.showUntrackedFiles no
 ##
