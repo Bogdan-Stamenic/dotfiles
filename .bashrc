@@ -4,7 +4,7 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-export PATH="$PATH:~/.emacs.d/bin:~/.bogdan/scripts/python"
+. ~/.profile
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -63,3 +63,4 @@ alias keycast='screenkey --timeout 1.5 --font-size small --position center --bg-
 ## config commit -m "A short message"
 ## config push
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+
