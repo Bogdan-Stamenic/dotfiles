@@ -30,7 +30,7 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/"
-      org-todo-keywords '((sequence "TODO(t), INPROGRESS(i)", "SUSPENDED(s)", "|", "DONE(d)", "CANCELLED(c)")))
+      org-todo-keywords '((sequence "TODO(t) INPROGRESS(i)" "SUSPENDED(s)" "|" "DONE(d)" "CANCELLED(c)")))
 
 (setq system-time-locale "C") ; Make sure that the weekdays in the
                               ; time stamps of your Org mode files and
