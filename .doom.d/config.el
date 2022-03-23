@@ -29,16 +29,20 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/"
-      org-todo-keywords '((sequence "TODO(t) INPROGRESS(i)" "SUSPENDED(s)" "|" "DONE(d)" "CANCELLED(c)")))
+(setq org-directory "~/org/")
+
+;; Org settings that load in after doom
+(with-eval-after-load "org"
+        (setq org-todo-keywords
+              '((sequence "TODO(t)" "INPROGRESS(i)" "SUSPENDED(s)" "|" "DONE(d)" "CANCELLED(c)")))
+        (setq org-journal-date-format "%a, %Y-%m-%d"
+              org-journal-file-format "%Y-%m.org"
+              org-journal-file-type 'monthly)
+        )
 
 (setq system-time-locale "C") ; Make sure that the weekdays in the
                               ; time stamps of your Org mode files and
                               ; in the agenda appear in English
-
-(setq org-journal-date-format "%a, %Y-%m-%d"
-      org-journal-file-format "%Y-%m.org"
-      org-journal-file-type 'monthly)
 
 ;; GPG key used for encryption
 (setq org-crypt-key nil)
