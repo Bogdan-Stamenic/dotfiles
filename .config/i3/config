@@ -190,6 +190,7 @@ assign [class="TelegramDesktop"] $ws2
 assign [class="Thunderbird"] $ws2
 assign [class="discord"] $ws2
 assign [class="Signal"] $ws2
+assign [class="Element"] $ws2
 for_window [instance="Msgcompose" class="Thunderbird"] floating enable
 for_window [instance="Calendar" class="Thunderbird"] floating enable
 for_window [class="Emacs"] floating enable, move container to scratchpad
@@ -208,6 +209,7 @@ exec firefox
 exec --no-startup-id discord
 exec --no-startup-id telegram-desktop
 exec --no-startup-id thunderbird
+exec --no-startup-id element-desktop
 #exec --no-startup-id signal-desktop
 exec emacs
 exec --no-startup-id flameshot
@@ -216,8 +218,8 @@ exec --no-startup-id flameshot
 ## https://github.com/meskarune/i3lock-fancy /or/ https://aur.archlinux.org/i3lock-fancy-git.git
 bindsym Control+Mod1+l exec i3lock-fancy #CTRL+ALT+L
 ## Launch windows using functions keys
-bindsym $mod+F1 exec firefox
-bindsym $mod+F2 exec brave
-bindsym $mod+F3 exec thunar
-bindsym $mod+F4 exec keepassxc
+bindsym $mod+F1 exec brave
+bindsym $mod+F2 exec thunar
+bindsym $mod+F3 exec keepassxc
+bindsym $mod+F4 exec element-desktop
 #bindsym Print exec gm import -window root screenshot.png 
