@@ -92,10 +92,10 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:Browser"
-set $ws2 "2:MissionControl"
-set $ws3 "3:Work"
+set $ws2 "2:Mail"
+set $ws3 "3:MissionControl"
 set $ws4 "4:Work"
-set $ws5 "5"
+set $ws5 "5:Work"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -185,17 +185,24 @@ exec_always --no-startup-id autotiling
 # Jump to urgent window
 bindsym $mod+x [urgent=latest] focus
 
-# Custom Window Positioning/Gaps Rules; xprop -> WM_CLASS(STRING) = "<instance>" "<class>"
-assign [class="TelegramDesktop"] $ws2
+
+### Custom Window Positioning/Gaps Rules; xprop -> WM_CLASS(STRING) = "<instance>" "<class>"
+## $ws2 (email)
 assign [class="Thunderbird"] $ws2
-assign [class="discord"] $ws2
-assign [class="Signal"] $ws2
-assign [class="Element"] $ws2
 for_window [instance="Msgcompose" class="Thunderbird"] floating enable
 for_window [instance="Calendar" class="Thunderbird"] floating enable
+
+## $ws3
+assign [class="TelegramDesktop"] $ws3
+assign [class="discord"] $ws3
+assign [class="Signal"] $ws3
+assign [class="Element"] $ws3
+
+## Scratchpad
 for_window [class="Emacs"] floating enable, move container to scratchpad
 # Resize Emacs from 640x480 to 960x720 and recenter
 for_window [class="Emacs"] resize set 960 720,move left 160
+
 
 # Disable window titlebars, to let i3-gaps work
 for_window [class=".*"] border pixel 0
@@ -204,17 +211,17 @@ gaps inner 8
 # Setup background
 exec feh --randomize --bg-scale /home/bogi/Pictures/wallpapers/*
 
-# Launch the following on start:
+## Launch the following on start:
 exec firefox
-exec --no-startup-id discord
-exec --no-startup-id telegram-desktop
 exec --no-startup-id thunderbird
+exec --no-startup-id telegram-desktop
+exec --no-startup-id discord
 exec --no-startup-id element-desktop
 #exec --no-startup-id signal-desktop
 exec emacs
 exec --no-startup-id flameshot
 
-### User custom keybinding
+### Custom keybinding
 ## https://github.com/meskarune/i3lock-fancy /or/ https://aur.archlinux.org/i3lock-fancy-git.git
 bindsym Control+Mod1+l exec i3lock-fancy #CTRL+ALT+L
 ## Launch windows using functions keys
