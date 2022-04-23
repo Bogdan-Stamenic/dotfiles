@@ -9,7 +9,10 @@ cmd='acpilight git python-pip python-pyperclip screenkey-git texlive-most tmux x
 ## GUI application
 gui='atril firefox gparted keepassxc okular telegram-desktop thunar thunderbird'
 
-sudo pacman -Syu $editors $cmd $gui $libs
+## Other
+etc='perl-json-xs perl-anyevent-i3'
+
+sudo pacman -Syu $editors $cmd $gui $etc
 
 ## Install paru for AUR applications
 cd ~/Downloads && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si

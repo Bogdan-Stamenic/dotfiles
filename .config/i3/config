@@ -92,8 +92,8 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:Browser"
-set $ws2 "2:Mail"
-set $ws3 "3:MissionControl"
+set $ws2 "2:MissionControl"
+set $ws3 "3:Work"
 set $ws4 "4:Work"
 set $ws5 "5:Work"
 set $ws6 "6"
@@ -187,21 +187,23 @@ bindsym $mod+x [urgent=latest] focus
 
 
 ### Custom Window Positioning/Gaps Rules; xprop -> WM_CLASS(STRING) = "<instance>" "<class>"
-## $ws2 (email)
-assign [class="Thunderbird"] $ws2
 for_window [instance="Msgcompose" class="Thunderbird"] floating enable
 for_window [instance="Calendar" class="Thunderbird"] floating enable
-
-## $ws3
-assign [class="TelegramDesktop"] $ws3
-assign [class="discord"] $ws3
-assign [class="Signal"] $ws3
-assign [class="Element"] $ws3
+## Workspace 2: Communications applications
+assign [class="TelegramDesktop"] $ws2
+assign [class="discord"] $ws2
+assign [class="Signal"] $ws2
+assign [class="Element"] $ws2
 
 ## Scratchpad
 for_window [class="Emacs"] floating enable, move container to scratchpad
 # Resize Emacs from 640x480 to 960x720 and recenter
 for_window [class="Emacs"] resize set 960 720,move left 160
+
+# Load workspace 2 config
+exec --no-startup-id "i3-msg 'workspace 2:MissionControl; append_layout ~/.config/i3/workspace_2.json'"
+# Switch to workspace 1
+exec --no-startup-id "i3-msg workspace 1:Browser"
 
 
 # Disable window titlebars, to let i3-gaps work
