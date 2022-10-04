@@ -8,13 +8,13 @@ export TERMINAL=/usr/bin/alacritty
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 export GIT_EDITOR=nvim
-export VIM_SNIPPETS_DIR=/home/bogi/.vim/bundle/vim-snippets/UltiSnips
+export VIM_SNIPPETS_DIR=$HOME/.vim/bundle/vim-snippets/UltiSnips
 export MAKEFLAGS="-j$(nproc)"
 
 # LaTeX environment variables
 export TEXMFDIST=/usr/share/texmf-dist
 export TEXMFLOCAL=/usr/local/share/texmf:/usr/share/texmf
-export TEXMFHOME=/home/bogi/texmf
+export TEXMFHOME=$HOME/texmf
 #export TEXMFVAR=~/.texlive/texmf-var
 #export TEXMFCONFIG=~/.texlive/texmf-config
 
