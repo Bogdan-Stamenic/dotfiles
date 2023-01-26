@@ -30,6 +30,12 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+## Vim-like marks
+# Mark current window with one character
+bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+# Goto window with inputted character
+bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
+
 
 ### Movement commands
 ## change focus
@@ -151,9 +157,10 @@ bar {
 
 ## Manual management of external displays
 # Set the shortcuts and what they do
-set $mode_display Ext Screen (v) HDMI ON, (x) HDMI OFF
+set $mode_display Ext Screen (l) HDMI ON (left), (r) HDMI ON (right), (x) HDMI OFF
 mode "$mode_display" {
-    bindsym v exec --no-startup-id xrandr --output DP-1 --auto --right-of eDP-1, mode "default"
+    bindsym l exec --no-startup-id xrandr --output DP-1 --auto --left-of eDP-1, mode "default"
+    bindsym r exec --no-startup-id xrandr --output DP-1 --auto --right-of eDP-1, mode "default"
     bindsym x exec --no-startup-id xrandr --output DP-1 --auto --off, mode "default"
 
     # back to normal: Enter or Escape
@@ -187,6 +194,10 @@ assign [class="TelegramDesktop"] $ws2
 assign [class="discord"] $ws2
 assign [class="Signal"] $ws2
 assign [class="Element"] $ws2
+
+## Default marks for windows
+for_window [class="firefox"] mark 'f'
+for_window [class="Spotify"] mark 's'
 
 ## Scratchpad
 for_window [class="Emacs"] floating enable, move container to scratchpad
@@ -222,4 +233,4 @@ bindsym Control+Mod1+l exec i3lock-fancy && loginctl lock-session #CTRL+ALT+L
 bindsym $mod+F1 exec brave --incognito
 bindsym $mod+F2 exec thunar
 bindsym $mod+F3 exec keepassxc
-bindsym $mod+F4 exec element-desktop
+bindsym $mod+F4 exec spotify

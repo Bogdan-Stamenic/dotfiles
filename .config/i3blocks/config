@@ -11,9 +11,8 @@ separator=true
 separator_block_width=15
 
 # Guess the weather hourly
-[weather]
-command=curl -Ss 'https://wttr.in/Munich?0&T&Q' | cut -c 16- | head -2 | xargs echo
-interval=3600
+[weather_NOAA]
+command=/home/bogi/.bogdan/scripts/i3blocks/weather_NOAA
 
 [network]
 command=/home/bogi/.bogdan/scripts/i3blocks/iface.sh
@@ -27,14 +26,10 @@ LABEL= 
 #INLABEL=DOWN
 #OUTLABEL=UP
 
-## Update screen brightness every 5 minutes
-#[backlight]
-#command=/home/bogi/.bogdan/scripts/i3blocks/backlight.sh
-#interval=300
-
 [cpu_usage2]
 command=/home/bogi/.bogdan/scripts/i3blocks/cpu_usage2
 markup=pango
+
 interval=persist
 #min_width=CPU 100.00%
 #REFRESH_TIME=1
@@ -48,8 +43,8 @@ command=/home/bogi/.bogdan/scripts/i3blocks/memory.sh
 label=MEM 
 interval=5
 
-[volume-pulaudio]
-command=/home/bogi/.bogdan/scripts/i3blocks/volume-pulseaudio.sh
+[volume-pipewire]
+command=/home/bogi/.bogdan/scripts/i3blocks/volume-pipewire
 interval=once
 signal=1
 
