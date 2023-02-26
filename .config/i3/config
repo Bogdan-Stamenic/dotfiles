@@ -27,8 +27,9 @@ bindsym $mod+x [urgent=latest] focus
 bindsym $mod+Return exec /usr/bin/alacritty
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+## Exit i3 (logs you out of your X session)
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-msg exit"
 
 ## Vim-like marks
 # Mark current window with one character
@@ -117,7 +118,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Assign workspaces to different monitors
 workspace $ws1 output primary
-workspace $ws2 output primary
+workspace $ws2 output eDP-1
 
 
 # resize window (you can also use the mouse for that)
@@ -178,6 +179,8 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 popup_during_fullscreen smart
+focus_on_window_activation smart
+workspace_auto_back_and_forth yes
 
 #######################################
 ## Launch windows and custom layouts ##
