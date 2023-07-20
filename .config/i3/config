@@ -192,6 +192,8 @@ exec_always --no-startup-id autotiling
 ### Custom Window Positioning/Gaps Rules; xprop -> WM_CLASS(STRING) = "<instance>" "<class>"
 for_window [instance="Msgcompose" class="thunderbird"] floating enable
 for_window [instance="Calendar" class="thunderbird"] floating enable
+## Workspace 1: Browser
+assign [class="firefox"] $ws1
 ## Workspace 2: Communications applications
 assign [class="TelegramDesktop"] $ws2
 assign [class="discord"] $ws2
@@ -231,7 +233,7 @@ exec --no-startup-id flameshot
 
 ### Custom keybinding
 ## https://github.com/meskarune/i3lock-fancy /or/ https://aur.archlinux.org/i3lock-fancy-git.git
-bindsym Control+Mod1+l exec i3lock-fancy && loginctl lock-session #CTRL+ALT+L
+bindsym Control+Mod1+l exec i3lock-fancy -p && loginctl lock-session #CTRL+ALT+L
 ## Launch windows using functions keys
 bindsym $mod+F1 exec brave --incognito
 bindsym $mod+F2 exec thunar
